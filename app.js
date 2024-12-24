@@ -6,7 +6,11 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const app = express();
 const port = process.env.PORT || 8080; // Use environment variable or default port
-const host = '0.0.0.0';
+const host = '54.242.18.108';
+app.listen(port, host, () => {
+  console.log(`App running at http://${host}:${port}`);
+});
+
 
 const genAI = new GoogleGenerativeAI("AIzaSyBC1lMo2Vd7FSyr67WKlSFtTEyYYPVHhRE");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
