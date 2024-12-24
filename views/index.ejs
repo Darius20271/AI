@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Generator</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Text Generator</h1>
+
+        <form action="/generate" method="POST">
+            <textarea id="prompt" name="prompt" rows="1" placeholder="Enter your prompt..." required></textarea>
+            <button type="submit">Generate</button>
+        </form>
+
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <% logs.forEach(log => { %>
+            <div class="message-container">
+              <div class="user-message">
+                <%= log.prompt %>
+              </div>
+              <div class="ai-message">
+                <%= log.response %>
+              </div>
+            </div>
+          <% }) %>
+    </div>
+</body>
+</html>

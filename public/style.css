@@ -1,0 +1,169 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #343541;
+  color: #ececf1; /* Light gray text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1rem;
+}
+
+.container {
+  min-width: 1700px;
+  max-width: 1700px;
+  padding: 30px;
+  background: #40414f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column-reverse; /* Changes the order */
+  margin: 20px;
+  overflow-y: auto;
+  min-height: 90vh;
+  max-height: 90vh;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #5d606e #343541; /* Custom scrollbar for Firefox */
+}
+
+/* Customize scrollbar for Webkit browsers (Chrome, Safari) */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #343541;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #5d606e;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #727587;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem; /* Reduced font size */
+}
+
+h2 {
+  color: #fff;
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #5d606e;
+  padding-bottom: 5px;
+  font-size: 1.2rem; /* Reduced font size */
+}
+
+
+/* Form Styling */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+form textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #5d606e;
+  border-radius: 5px;
+  background-color: #4d4e5c;
+  color: #ececf1;
+  resize: none;
+  min-height: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+}
+
+form textarea:focus {
+outline: none;
+border-color: #64667a;
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+button {
+  padding: 10px 20px;
+  background-color: #10a37f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+button:hover {
+  background-color: #0e8a6a;
+}
+
+.error {
+  color: #e74c3c;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #e74c3c;
+  border-radius: 5px;
+  background-color: #fdeaea;
+  font-size: 0.95rem;
+}
+
+/* Chat Message Styling */
+.message-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  opacity: 0; /* Initial state for fade-in */
+  animation: fadeIn 0.3s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+.user-message,
+.ai-message {
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-message {
+  background-color: #5d606e;
+  align-self: flex-end;
+  border-radius: 10px 10px 0 10px;
+  color: #ececf1;
+}
+
+.ai-message {
+  background-color: #4d4e5c;
+  align-self: flex-start;
+  border-radius: 0 10px 10px 10px;
+  color: #ececf1;
+}

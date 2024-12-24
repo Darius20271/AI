@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a model</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+       <div id="page2-container">
+        <div id="popup-content">
+          <h2>Choose</h2>
+          <div class="select" onclick="selectModel('coder')">Coder</div>
+          <div class="select" onclick="selectModel('chef')">Chef</div>
+          <div class="select" onclick="selectModel('counselor')">Counselor</div>
+        </div>
+      </div>
+    </div>
+  <script>
+    function selectModel(model){
+      console.log(model);
+      const selected = document.querySelectorAll(".selected");
+      selected.forEach((sel) => {
+        sel.classList.remove("selected")
+      });
+      document.querySelector(`div[onclick="selectModel('${model}')"]`).classList.add("selected")
+    }
+  </script>
+</body>
+</html>
